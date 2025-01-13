@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29667564-7C66-47D4-AFEE-15B8B77CB961}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UTS</RootNamespace>
+    <AssemblyName>UTS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config\Connection.cs" />
+    <Compile Include="controllers\Authentication.cs" />
+    <Compile Include="controllers\DokterController.cs" />
+    <Compile Include="controllers\JadwalPraktekController.cs" />
+    <Compile Include="controllers\LaporanKeuanganController.cs" />
+    <Compile Include="controllers\LaporanKinerjaDokterController.cs" />
+    <Compile Include="controllers\LaporanKunjunganController.cs" />
+    <Compile Include="controllers\LaporanRekamMedisController.cs" />
+    <Compile Include="controllers\PasienController.cs" />
+    <Compile Include="controllers\PembayaranController.cs" />
+    <Compile Include="controllers\PendaftaranController.cs" />
+    <Compile Include="controllers\RekamMedisController.cs" />
+    <Compile Include="models\Admin.cs" />
+    <Compile Include="models\Dokter.cs" />
+    <Compile Include="models\JadwalPraktek.cs" />
+    <Compile Include="models\Pasien.cs" />
+    <Compile Include="models\Pembayaran.cs" />
+    <Compile Include="models\Pendaftaran.cs" />
+    <Compile Include="models\RekamMedis.cs" />
+    <Compile Include="session\session.cs" />
+    <Compile Include="views\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FormLaporanKeuangan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FormLaporanKeuangan.Designer.cs">
+      <DependentUpon>FormLaporanKeuangan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FormLaporanKinerjaDokter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FormLaporanKinerjaDokter.Designer.cs">
+      <DependentUpon>FormLaporanKinerjaDokter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FormLaporanKunjungan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FormLaporanKunjungan.Designer.cs">
+      <DependentUpon>FormLaporanKunjungan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FormLaporanRekamMedis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FormLaporanRekamMedis.Designer.cs">
+      <DependentUpon>FormLaporanRekamMedis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\master\FormDataDokter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\master\FormDataDokter.Designer.cs">
+      <DependentUpon>FormDataDokter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\master\FormDataPasien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\master\FormDataPasien.Designer.cs">
+      <DependentUpon>FormDataPasien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\master\FormJadwalPraktek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\master\FormJadwalPraktek.Designer.cs">
+      <DependentUpon>FormJadwalPraktek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pasien.cs" />
+    <Compile Include="views\Transaksi\FormPendaftaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Transaksi\FormPendaftaran.Designer.cs">
+      <DependentUpon>FormPendaftaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\auth\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\auth\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Transaksi\FormPembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Transaksi\FormPembayaran.Designer.cs">
+      <DependentUpon>FormPembayaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Transaksi\FormRekamMedis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Transaksi\FormRekamMedis.Designer.cs">
+      <DependentUpon>FormRekamMedis.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="views\auth\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FormLaporanKeuangan.resx">
+      <DependentUpon>FormLaporanKeuangan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FormLaporanKinerjaDokter.resx">
+      <DependentUpon>FormLaporanKinerjaDokter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FormLaporanKunjungan.resx">
+      <DependentUpon>FormLaporanKunjungan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FormLaporanRekamMedis.resx">
+      <DependentUpon>FormLaporanRekamMedis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\master\FormDataDokter.resx">
+      <DependentUpon>FormDataDokter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\master\FormDataPasien.resx">
+      <DependentUpon>FormDataPasien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\master\FormJadwalPraktek.resx">
+      <DependentUpon>FormJadwalPraktek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Transaksi\FormPendaftaran.resx">
+      <DependentUpon>FormPendaftaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="views\Transaksi\FormPembayaran.resx">
+      <DependentUpon>FormPembayaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Transaksi\FormRekamMedis.resx">
+      <DependentUpon>FormRekamMedis.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mds.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinpaper-filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Whatsapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stethoscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 36.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
